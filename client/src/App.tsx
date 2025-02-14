@@ -1,12 +1,16 @@
 import React from 'react';
-import ProductList from './Components/ProductList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProductList from './components/ProductList';
+import Login from './components/Auth/Login';
 
 const App = () => {
   return (
-    <div>
-      <h1>Welcome to the E-Commerce Platform!</h1>
-      <ProductList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ProductList />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
   );
 };
 
